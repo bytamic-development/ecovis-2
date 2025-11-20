@@ -1,0 +1,21 @@
+# Vercel ignore file
+# Files and directories to exclude from deployment
+
+# Documentation
+SITE_CONTENT.md
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+

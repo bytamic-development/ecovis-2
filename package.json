@@ -1,0 +1,18 @@
+{
+  "name": "ecovis-austria-website",
+  "version": "1.0.0",
+  "description": "ECOVIS Austria static website",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "static",
+    "website",
+    "ecovis"
+  ],
+  "author": "",
+  "license": "UNLICENSED"
+}
+
