@@ -4,8 +4,9 @@
   "description": "ECOVIS Austria static website",
   "private": true,
   "scripts": {
-    "dev": "vercel dev",
-    "deploy": "vercel --prod"
+    "dev": "http-server . -p 3000 -o",
+    "deploy": "vercel --prod",
+    "build-widget": "vite build"
   },
   "keywords": [
     "static",
@@ -13,6 +14,15 @@
     "ecovis"
   ],
   "author": "",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@elevenlabs/react": "latest",
+    "@vitejs/plugin-react": "^4.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^5.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }
-
