@@ -4,7 +4,7 @@
   "description": "ECOVIS Austria static website",
   "private": true,
   "scripts": {
-    "dev": "http-server . -p 3000 -o",
+    "dev": "http-server . -p 8000 -a localhost -o",
     "deploy": "vercel --prod",
     "build-widget": "vite build"
   },

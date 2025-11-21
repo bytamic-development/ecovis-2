@@ -243,8 +243,17 @@
 
     <!-- Custom ElevenLabs Widget -->
     <div id="elevenlabs-widget-root"></div>
-    <link rel="stylesheet" href="dist-widget/widget-main.css?v=7">
-    <script type="module" src="dist-widget/widget-bundle.js?v=7"></script>
+    <script>
+      // Immediately prevent old widget from loading
+      (function() {
+        const oldWidgets = document.querySelectorAll('elevenlabs-convai');
+        oldWidgets.forEach(widget => widget.remove());
+        const oldScripts = document.querySelectorAll('script[src*="convai-widget-embed"]');
+        oldScripts.forEach(script => script.remove());
+      })();
+    </script>
+    <link rel="stylesheet" href="dist-widget/widget-main.css?v=16">
+    <script type="module" src="dist-widget/widget-bundle.js?v=16"></script>
 </body>
 </html>
 

@@ -5,6 +5,7 @@
   right: 20px;
   z-index: 9999;
   font-family: "Meta Offc W01 Normal", Arial, Helvetica, sans-serif;
+  overflow: visible;
 }
 
 /* Start Button */
@@ -12,70 +13,76 @@
   background-color: #ffffff;
   border-radius: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 8px 16px 8px 8px;
+  padding: 20px 16px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  gap: 16px;
   transition: transform 0.2s ease;
+  min-width: 200px;
 }
 
 .start-button-container:hover {
   transform: translateY(-2px);
 }
 
-.start-button-content {
+.start-button-top {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 12px;
+  width: 100%;
 }
 
 .avatar-circle {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #CD1432 0%, #a01028 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
-.avatar-inner {
+.ai-sphere-gif {
   width: 100%;
   height: 100%;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>');
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.text-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  object-fit: contain;
 }
 
 .need-help {
-  font-size: 12px;
+  font-size: 14px;
   color: #72747C;
-  margin-bottom: 2px;
+  font-weight: 400;
 }
 
 .start-call-btn {
-  background: none;
+  background-color: #CD1432;
   border: none;
-  padding: 0;
+  border-radius: 20px;
+  padding: 10px 20px;
   font-size: 14px;
   font-weight: 600;
-  color: #CD1432;
+  color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  gap: 6px;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.start-call-btn:hover {
+  background-color: #a01028;
+  transform: scale(1.02);
 }
 
 .phone-icon {
-  font-size: 14px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 /* Terms Modal */
@@ -236,10 +243,11 @@
 .chat-interface.minimized {
   width: auto;
   height: auto;
-  padding: 0;
+  padding: 8px;
   background: transparent;
   box-shadow: none;
   border-radius: 0;
+  overflow: visible;
 }
 
 .chat-interface.minimized .expand-button {
@@ -273,6 +281,98 @@
   flex-direction: column;
   background: #fff;
   overflow: hidden;
+}
+
+.chat-body-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.connect-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.connect-phone-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #CD1432;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(205, 20, 50, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 0;
+}
+
+.connect-phone-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(205, 20, 50, 0.4);
+}
+
+.connect-phone-button:active {
+  transform: scale(0.95);
+}
+
+.connect-phone-button svg {
+  width: 32px;
+  height: 32px;
+}
+
+.connect-phone-button svg path {
+  stroke: white;
+  fill: none;
+}
+
+.new-call-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.new-call-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: #CD1432;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  font-family: "Meta Offc W01 Normal", Arial, Helvetica, sans-serif;
+}
+
+.new-call-button:hover {
+  background-color: #a01028;
+  transform: translateY(-1px);
+}
+
+.new-call-button:active {
+  transform: translateY(0);
+}
+
+.new-call-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.new-call-button svg path {
+  stroke: white;
+  fill: none;
 }
 
 .messages-container {
@@ -435,10 +535,15 @@
   transform: scale(1.05);
 }
 
-.phone-button.active {
+.phone-button.end-call-button {
   background-color: #ff4444 !important;
   background: #ff4444 !important;
   animation: pulse 1.5s infinite;
+}
+
+.phone-button.end-call-button:hover {
+  background-color: #cc3333 !important;
+  background: #cc3333 !important;
 }
 
 .phone-button svg {
